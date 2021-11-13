@@ -47,14 +47,14 @@ function Contacts() {
 }
 
 const CoreContainer = styled.div`
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     display: flex;
     padding: 24px 80px 24px 0;
   `}
 `
 
 const NavigationContainer = styled.nav`
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     border-right: 1px solid #e69422;
     padding: 0 24px;
   `}
@@ -63,7 +63,7 @@ const NavigationContainer = styled.nav`
 const NavigationHeader = styled.span`
   display: none;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     display: block;
     font-weight: bold;
     padding: 12px 8px;
@@ -88,7 +88,7 @@ const NavigationItem = styled.li`
     border-bottom: 1px solid #e69422;
   }
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     border: none;
     text-align: left;
     text-transform: none;
@@ -102,7 +102,7 @@ const NavigationItem = styled.li`
 const ContactContainer = styled.div`
   display: none;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     display: block;
     padding: 0 24px;
   `}
@@ -120,7 +120,7 @@ const ContactItem = styled.div`
     border-bottom: 1px solid #e69422;
   }
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     border: none;
     text-align: left;
     text-transform: none;

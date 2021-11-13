@@ -21,7 +21,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 24px 48px;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     padding: 24px;
   `}
 `

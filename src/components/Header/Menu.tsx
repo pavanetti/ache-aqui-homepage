@@ -50,7 +50,7 @@ const Menu = () => {
 }
 
 const MenuContainer = styled.div`
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     display: flex;
   `}
 `
@@ -74,7 +74,7 @@ const MenuNav = styled.nav`
     height: 290px;
   }
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     &&& {
       box-shadow: none;
       flex-direction: row;
@@ -91,7 +91,7 @@ const NavButton = styled(Button)`
   margin: 8px 0;
   width: 144px;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     margin: 0 0 0 24px;
   `}
 `
@@ -101,7 +101,7 @@ const NavigationList = styled.ul`
   padding: 16px 0;
   text-align: center;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     display: flex;
     justify-content: space-between;
     max-width: 400px;
@@ -117,7 +117,7 @@ const NavigationItem = styled.li`
   padding: 8px;
   text-transform: uppercase;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     border: none;
     padding: 8px 0 8px 16px;
   `}

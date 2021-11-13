@@ -8,7 +8,7 @@ const CopyrightContainer = styled.div`
   line-height: 24px;
   text-align: center;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     border-top: 1px solid #e69422;
     display: flex;
     justify-content: space-between;

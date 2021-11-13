@@ -27,7 +27,7 @@ const InvisibleButton = styled.button`
   padding: 16px;
   width: 48px;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     display: none;
   `}
 `

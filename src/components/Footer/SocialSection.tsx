@@ -12,7 +12,7 @@ const SocialContainer = styled.div`
   flex-direction: column;
   padding: 24px;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     padding-left: 96px;
   `}
 `
@@ -26,7 +26,7 @@ const SocialIconsWrapper = styled.div`
 
 const SignupButton = styled(Button)`
   display: none;
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     display: block;
     margin: 12px;
   `}

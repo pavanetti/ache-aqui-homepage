@@ -9,7 +9,7 @@ const FooterContainer = styled.div`
   color: white;
   padding: 24px 0;
 
-  ${mediaQuery.tablet`
+  ${mediaQuery.greaterThan('tablet')`
     align-items: flex-end;
     display: flex;
     flex-direction: row-reverse;
