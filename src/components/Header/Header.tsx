@@ -19,4 +19,8 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 24px 48px;
+
+  @media (min-width: 768px) {
+    padding: 24px;
+  }
 `

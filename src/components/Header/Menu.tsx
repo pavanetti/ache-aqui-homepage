@@ -29,7 +29,7 @@ const Menu = () => {
   ]
 
   return (
-    <div ref={menuRef}>
+    <MenuContainer ref={menuRef}>
       <HambugerButton isOpen={isOpen} toggleMenu={toggleMenu} />
       <MenuNav className={menuClass}>
         <NavigationList>
@@ -44,9 +44,15 @@ const Menu = () => {
         <NavButton primary>Buscar</NavButton>
         <NavButton secondary>Cadastrar</NavButton>
       </MenuNav>
-    </div>
+    </MenuContainer>
   )
 }
+
+const MenuContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`
 
 const MenuNav = styled.nav`
   align-items: stretch;
@@ -66,18 +72,38 @@ const MenuNav = styled.nav`
       rgb(0 0 0 / 14%) 0px 8px 8px 0px, rgb(255 255 255 / 12%) 0px 10px 10px 0px;
     height: 290px;
   }
+
+  @media (min-width: 768px) {
+    &&& {
+      box-shadow: none;
+      flex-direction: row;
+      height: unset;
+      position: unset;
+      width: unset;
+    }
+  }
 `
 
 const NavButton = styled(Button)`
   align-self: center;
   margin: 8px 0;
   width: 144px;
+
+  @media (min-width: 768px) {
+    margin: 0 0 0 24px;
+  }
 `
 
 const NavigationList = styled.ul`
   margin: 0;
   padding: 16px 0;
   text-align: center;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+  }
 `
 
 const NavigationItem = styled.li`
@@ -87,6 +113,11 @@ const NavigationItem = styled.li`
   list-style: none;
   padding: 8px;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    border: none;
+    padding: 8px 0 8px 16px;
+  }
 `
 
 export default Menu

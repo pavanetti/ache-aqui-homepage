@@ -25,6 +25,10 @@ const InvisibleButton = styled.button`
   height: 48px;
   padding: 16px;
   width: 48px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 const AnimatedButton = styled.div`
