@@ -15,17 +15,14 @@ const Button = styled.button<ButtonProps>`
 `
 
 function backgroundColorFrom(props) {
-  const colors = {
-    primary: '#204372',
-    secondary: '#3E98C7',
+  if (props.primary) {
+    return props.theme.primaryColor
+  }
+  if (props.secondary) {
+    return props.theme.secondaryColor
   }
 
-  for (const key of ['primary', 'secondary']) {
-    if (props[key]) {
-      return colors[key]
-    }
-  }
-  return colors.primary
+  return props.theme.primaryColor
 }
 
 export default Button
