@@ -1,6 +1,57 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
+export function NavigationAndContacts() {
+  return (
+    <CoreContainer>
+      <Navigation />
+      <Contacts />
+    </CoreContainer>
+  )
+}
+
+function Navigation() {
+  const menuLinks = [
+    { text: 'Início', path: '/' },
+    { text: 'Como funciona', path: '/sobre' },
+    { text: 'Login', path: '/login' },
+    { text: 'Contato', path: '/contato' },
+  ]
+  return (
+    <NavigationContainer>
+      <NavigationHeader>Ache aqui</NavigationHeader>
+      <NavigationList>
+        {menuLinks.map((link) => (
+          <NavigationItem key={link.text}>
+            <Link href={link.path}>
+              <a>{link.text}</a>
+            </Link>
+          </NavigationItem>
+        ))}
+      </NavigationList>
+    </NavigationContainer>
+  )
+}
+
+function Contacts() {
+  const data = ['55 9 99999-9999', 'email@email.com', 'Av. X N° Y - Brasília']
+  return (
+    <ContactContainer>
+      <NavigationHeader>Contato</NavigationHeader>
+      {data.map((item) => (
+        <ContactItem key={item}>{item}</ContactItem>
+      ))}
+    </ContactContainer>
+  )
+}
+
+const CoreContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    padding: 24px 80px 24px 0;
+  }
+`
+
 const NavigationContainer = styled.nav`
   @media (min-width: 768px) {
     border-right: 1px solid #e69422;
@@ -47,29 +98,6 @@ const NavigationItem = styled.li`
   }
 `
 
-function Navigation() {
-  const menuLinks = [
-    { text: 'Início', link: '/' },
-    { text: 'Como funciona', link: '/sobre' },
-    { text: 'Login', link: '/login' },
-    { text: 'Contato', link: '/contato' },
-  ]
-  return (
-    <NavigationContainer>
-      <NavigationHeader>Ache aqui</NavigationHeader>
-      <NavigationList>
-        {menuLinks.map((link) => (
-          <NavigationItem key={link.text}>
-            <Link href={link.link}>
-              <a>{link.text}</a>
-            </Link>
-          </NavigationItem>
-        ))}
-      </NavigationList>
-    </NavigationContainer>
-  )
-}
-
 const ContactContainer = styled.div`
   display: none;
 
@@ -101,30 +129,3 @@ const ContactItem = styled.div`
     }
   }
 `
-
-function Contacts() {
-  const data = ['55 9 99999-9999', 'email@email.com', 'Av. X N° Y - Brasília']
-  return (
-    <ContactContainer>
-      <NavigationHeader>Contato</NavigationHeader>
-      {data.map((item) => (
-        <ContactItem key={item}>{item}</ContactItem>
-      ))}
-    </ContactContainer>
-  )
-}
-
-const CoreContainer = styled.div`
-  @media (min-width: 768px) {
-    display: flex;
-    padding: 24px 80px 24px 0;
-  }
-`
-export function NavigationAndContacts() {
-  return (
-    <CoreContainer>
-      <Navigation />
-      <Contacts />
-    </CoreContainer>
-  )
-}

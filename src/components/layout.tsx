@@ -1,17 +1,26 @@
 import { FC } from 'react'
+import styled from 'styled-components'
 import Footer from './Footer'
-import Header from './header'
-
-import styles from './Layout.module.css'
+import Header from './Header'
 
 const Layout: FC = ({ children }) => {
   return (
-    <div className={styles['global-container']}>
+    <GlobalContainer>
       <Header />
-      <div className={styles['main-container']}>{children}</div>
+      <ContentContainer>{children}</ContentContainer>
       <Footer />
-    </div>
+    </GlobalContainer>
   )
 }
 
 export default Layout
+
+const GlobalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const ContentContainer = styled.div`
+  flex: 1;
+`
