@@ -79,6 +79,7 @@ const MenuNav = styled.nav`
       box-shadow: none;
       flex-direction: row;
       height: unset;
+      padding: unset;
       position: unset;
       width: unset;
     }
@@ -104,6 +105,7 @@ const NavigationList = styled.ul`
     display: flex;
     justify-content: space-between;
     max-width: 400px;
+    padding: unset;
   `}
 `
 
