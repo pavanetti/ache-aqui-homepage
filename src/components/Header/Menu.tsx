@@ -1,10 +1,10 @@
-import { FC, useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import Link from 'next/link'
-import { Menu as MenuIcon, X } from '@styled-icons/boxicons-regular'
 
 import Button from '../Atoms/Button'
 import styled from 'styled-components'
+import HambugerButton from './HambugerButton'
 
 const useToggleMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,42 +42,24 @@ const Menu = () => {
   )
 }
 
-interface HambugerButtonProps {
-  isOpen: boolean
-  toggleMenu: () => void
-}
-
-const HambugerButton: FC<HambugerButtonProps> = ({ isOpen, toggleMenu }) => {
-  const Icon = isOpen ? X : MenuIcon
-  return (
-    <InvisibleButton onClick={toggleMenu}>
-      <Icon size={24} color="#204372" />
-    </InvisibleButton>
-  )
-}
-
 const MenuNav = styled.nav`
-  display: none;
+  align-items: stretch;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 12px 0;
+  position: absolute;
+  transition: height ease 0.6s;
+  width: 100vw;
 
   &.-isopen {
-    align-items: stretch;
-    background: white;
     box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -1px,
       rgb(0 0 0 / 14%) 0px 8px 8px 0px, rgb(255 255 255 / 12%) 0px 10px 10px 0px;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    padding: 12px 0;
-    position: absolute;
-    width: 100vw;
+    height: 290px;
   }
-`
-
-const InvisibleButton = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 12px;
 `
 
 const NavButton = styled(Button)`
