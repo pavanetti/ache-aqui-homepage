@@ -1,6 +1,6 @@
 import { Menu } from '@styled-icons/boxicons-regular'
 
-import Logo from '../../public/logo.svg'
+import Logo from './logo.svg'
 import styles from './Header.module.css'
 
 const Header = () => {

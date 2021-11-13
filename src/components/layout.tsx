@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Footer from './footer'
+import Footer from './Footer'
 import Header from './header'
 
 import styles from './Layout.module.css'
