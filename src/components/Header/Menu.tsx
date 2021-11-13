@@ -1,10 +1,11 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
 import Link from 'next/link'
 
 import Button from '../Atoms/Button'
 import styled from 'styled-components'
 import HambugerButton from './HambugerButton'
+import useClickOutsideAlerter from '../../hooks/clickOutsideAlerter'
 
 const useToggleMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,16 +15,21 @@ const useToggleMenu = () => {
 }
 
 const Menu = () => {
+  const menuRef = useRef(null)
+  const { isOpen, menuClass, toggleMenu } = useToggleMenu()
+
+  useClickOutsideAlerter(menuRef, () => {
+    if (isOpen) toggleMenu()
+  })
+
   const links = [
     { text: 'Início', path: '/' },
     { text: 'Como funciona', path: '/sobre' },
     { text: 'Login', path: '/login' },
   ]
 
-  const { isOpen, menuClass, toggleMenu } = useToggleMenu()
-
   return (
-    <div>
+    <div ref={menuRef}>
       <HambugerButton isOpen={isOpen} toggleMenu={toggleMenu} />
       <MenuNav className={menuClass}>
         <NavigationList>
