@@ -1,13 +1,19 @@
 import styled from 'styled-components'
 import { StyledIconBase } from '@styled-icons/styled-icon'
 import { Facebook, Instagram, Twitter } from '@styled-icons/boxicons-logos'
+
 import Logo from '../logo.svg'
+import Button from '../Atoms/Button'
 
 const SocialContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
   padding: 24px;
+
+  @media (min-width: 768px) {
+    padding-left: 96px;
+  }
 `
 
 const SocialIconsWrapper = styled.div`
@@ -16,6 +22,15 @@ const SocialIconsWrapper = styled.div`
     margin: 6px;
   }
 `
+
+const SignupButton = styled(Button)`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    margin: 12px;
+  }
+`
+
 export const SocialSection = () => {
   return (
     <SocialContainer>
@@ -25,6 +40,7 @@ export const SocialSection = () => {
         <Facebook size={24} />
         <Instagram size={24} />
       </SocialIconsWrapper>
+      <SignupButton secondary>Cadastrar</SignupButton>
     </SocialContainer>
   )
 }
