@@ -22,6 +22,6 @@ const HeaderContainer = styled.div`
   padding: 24px 48px;
 
   ${mediaQuery.greaterThan('tablet')`
-    padding: 24px;
+    padding: 24px 36px;
   `}
 `

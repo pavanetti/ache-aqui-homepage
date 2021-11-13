@@ -1,17 +1,11 @@
+import HeroBlock from '../components/Home/HeroBlock'
+
 const Home = () => {
   return (
-    <div>
-      <FirstBlock />
+    <>
+      <HeroBlock />
       <SecondBlock />
-    </div>
-  )
-}
-
-const FirstBlock = () => {
-  return (
-    <div>
-      <h1>First Block</h1>
-    </div>
+    </>
   )
 }
 

@@ -10,7 +10,8 @@ const Button = styled.button<ButtonProps>`
   border: none;
   border-radius: 4px;
   color: white;
-  padding: 12px 24px;
+  font-size: 16px;
+  padding: 12px 36px;
   text-transform: uppercase;
 `
 
