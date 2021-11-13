@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import mediaQuery from '../../mixins/mediaQuery'
+import mediaQuery from 'mixins/mediaQuery'
 
-import Logo from '../logo.svg'
+import Logo from 'public/logo.svg'
 import Menu from './Menu'
 
 const Header = () => {

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import mediaQuery from '../../mixins/mediaQuery'
+import mediaQuery from 'mixins/mediaQuery'
 
 const CopyrightContainer = styled.div`
   flex-basis: 100%;

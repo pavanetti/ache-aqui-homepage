@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
-import mediaQuery from '../../mixins/mediaQuery'
+import mediaQuery from 'mixins/mediaQuery'
 
 interface HambugerButtonProps {
   isOpen: boolean

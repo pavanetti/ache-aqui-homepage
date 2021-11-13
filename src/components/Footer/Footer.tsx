@@ -2,7 +2,7 @@ import { NavigationAndContacts } from './NavigationAndContacts'
 import { CopyrightTagline } from './CopyrightTagline'
 import { SocialSection } from './SocialSection'
 import styled from 'styled-components'
-import mediaQuery from '../../mixins/mediaQuery'
+import mediaQuery from 'mixins/mediaQuery'
 
 const FooterContainer = styled.div`
   background: #204372;

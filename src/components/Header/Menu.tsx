@@ -2,11 +2,11 @@ import { useCallback, useRef, useState } from 'react'
 
 import Link from 'next/link'
 
-import Button from '../Atoms/Button'
+import Button from 'components/Atoms/Button'
 import styled from 'styled-components'
 import HambugerButton from './HambugerButton'
-import useClickOutsideAlerter from '../../hooks/clickOutsideAlerter'
-import mediaQuery from '../../mixins/mediaQuery'
+import useClickOutsideAlerter from 'hooks/clickOutsideAlerter'
+import mediaQuery from 'mixins/mediaQuery'
 
 const useToggleMenu = () => {
   const [isOpen, setIsOpen] = useState(false)

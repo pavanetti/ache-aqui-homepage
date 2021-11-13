@@ -1,4 +1,4 @@
-import HeroBlock from '../components/Home/HeroBlock'
+import HeroBlock from 'components/Home/HeroBlock'
 
 const Home = () => {
   return (

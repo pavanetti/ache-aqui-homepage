@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import { StyledIconBase } from '@styled-icons/styled-icon'
 import { Facebook, Instagram, Twitter } from '@styled-icons/boxicons-logos'
 
-import Logo from '../logo.svg'
-import Button from '../Atoms/Button'
-import mediaQuery from '../../mixins/mediaQuery'
+import Logo from 'public/logo.svg'
+import Button from 'components/Atoms/Button'
+import mediaQuery from 'mixins/mediaQuery'
 
 const SocialContainer = styled.div`
   align-items: center;

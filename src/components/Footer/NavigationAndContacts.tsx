@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import mediaQuery from '../../mixins/mediaQuery'
+import mediaQuery from 'mixins/mediaQuery'
 
 export function NavigationAndContacts() {
   return (

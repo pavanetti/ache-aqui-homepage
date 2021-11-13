@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styled from 'styled-components'
-import Button from '../Atoms/Button'
-import { Header1, Header5 } from '../Atoms/Header'
+import Button from 'components/Atoms/Button'
+import { Header1, Header5 } from 'components/Atoms/Header'
 
 import heroImage from 'public/hero-image.png'
 import mediaQuery from 'src/mixins/mediaQuery'
