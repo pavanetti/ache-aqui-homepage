@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
+import mediaQuery from '../../mixins/mediaQuery'
 
 interface HambugerButtonProps {
   isOpen: boolean
@@ -26,9 +27,9 @@ const InvisibleButton = styled.button`
   padding: 16px;
   width: 48px;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     display: none;
-  }
+  `}
 `
 
 const AnimatedButton = styled.div`

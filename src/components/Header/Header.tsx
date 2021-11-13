@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import mediaQuery from '../../mixins/mediaQuery'
 
 import Logo from '../logo.svg'
 import Menu from './Menu'
@@ -20,7 +21,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 24px 48px;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     padding: 24px;
-  }
+  `}
 `

@@ -4,6 +4,7 @@ import { Facebook, Instagram, Twitter } from '@styled-icons/boxicons-logos'
 
 import Logo from '../logo.svg'
 import Button from '../Atoms/Button'
+import mediaQuery from '../../mixins/mediaQuery'
 
 const SocialContainer = styled.div`
   align-items: center;
@@ -11,9 +12,9 @@ const SocialContainer = styled.div`
   flex-direction: column;
   padding: 24px;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     padding-left: 96px;
-  }
+  `}
 `
 
 const SocialIconsWrapper = styled.div`
@@ -25,10 +26,10 @@ const SocialIconsWrapper = styled.div`
 
 const SignupButton = styled(Button)`
   display: none;
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     display: block;
     margin: 12px;
-  }
+  `}
 `
 
 export const SocialSection = () => {

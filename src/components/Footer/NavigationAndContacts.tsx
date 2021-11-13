@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import mediaQuery from '../../mixins/mediaQuery'
 
 export function NavigationAndContacts() {
   return (
@@ -46,28 +47,28 @@ function Contacts() {
 }
 
 const CoreContainer = styled.div`
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     display: flex;
     padding: 24px 80px 24px 0;
-  }
+  `}
 `
 
 const NavigationContainer = styled.nav`
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     border-right: 1px solid #e69422;
     padding: 0 24px;
-  }
+  `}
 `
 
 const NavigationHeader = styled.span`
   display: none;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     display: block;
     font-weight: bold;
     padding: 12px 8px;
     text-transform: uppercase;
-  }
+  `}
 `
 
 const NavigationList = styled.ul`
@@ -87,7 +88,7 @@ const NavigationItem = styled.li`
     border-bottom: 1px solid #e69422;
   }
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     border: none;
     text-align: left;
     text-transform: none;
@@ -95,16 +96,16 @@ const NavigationItem = styled.li`
     :last-of-type {
       border: none;
     }
-  }
+  `}
 `
 
 const ContactContainer = styled.div`
   display: none;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     display: block;
     padding: 0 24px;
-  }
+  `}
 `
 
 const ContactItem = styled.div`
@@ -119,7 +120,7 @@ const ContactItem = styled.div`
     border-bottom: 1px solid #e69422;
   }
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     border: none;
     text-align: left;
     text-transform: none;
@@ -127,5 +128,5 @@ const ContactItem = styled.div`
     :last-of-type {
       border: none;
     }
-  }
+  `}
 `

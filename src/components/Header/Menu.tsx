@@ -6,6 +6,7 @@ import Button from '../Atoms/Button'
 import styled from 'styled-components'
 import HambugerButton from './HambugerButton'
 import useClickOutsideAlerter from '../../hooks/clickOutsideAlerter'
+import mediaQuery from '../../mixins/mediaQuery'
 
 const useToggleMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -49,9 +50,9 @@ const Menu = () => {
 }
 
 const MenuContainer = styled.div`
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     display: flex;
-  }
+  `}
 `
 
 const MenuNav = styled.nav`
@@ -73,7 +74,7 @@ const MenuNav = styled.nav`
     height: 290px;
   }
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     &&& {
       box-shadow: none;
       flex-direction: row;
@@ -81,7 +82,7 @@ const MenuNav = styled.nav`
       position: unset;
       width: unset;
     }
-  }
+  `}
 `
 
 const NavButton = styled(Button)`
@@ -89,9 +90,9 @@ const NavButton = styled(Button)`
   margin: 8px 0;
   width: 144px;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     margin: 0 0 0 24px;
-  }
+  `}
 `
 
 const NavigationList = styled.ul`
@@ -99,11 +100,11 @@ const NavigationList = styled.ul`
   padding: 16px 0;
   text-align: center;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     display: flex;
     justify-content: space-between;
     max-width: 400px;
-  }
+  `}
 `
 
 const NavigationItem = styled.li`
@@ -114,10 +115,10 @@ const NavigationItem = styled.li`
   padding: 8px;
   text-transform: uppercase;
 
-  @media (min-width: 768px) {
+  ${mediaQuery.tablet`
     border: none;
     padding: 8px 0 8px 16px;
-  }
+  `}
 `
 
 export default Menu
