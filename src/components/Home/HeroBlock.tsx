@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 import Button from 'components/Atoms/Button'
-import { Header1, Header5 } from 'components/Atoms/Header'
+import { Header1, Header4 } from 'components/Atoms/Header'
 
 import heroImage from 'public/hero-image.png'
-import mediaQuery from 'src/mixins/mediaQuery'
+import mediaQuery from 'mixins/mediaQuery'
 
 const HeroBlock = () => {
   return (
@@ -14,12 +14,12 @@ const HeroBlock = () => {
           Mauris blandit aliquet elit, eget tincidunt nibh <em>pulvinar</em> a.
           Donec rutrum congue leo eget <em>malesuada</em>.
         </Header1>
-        <Header5>
+        <Header4>
           Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet
           et, porttitor at sem. Sed porttitor lectus nibh. Nulla porttitor
           accumsan tincidunt.
-        </Header5>
-        <Button>Buscar</Button>
+        </Header4>
+        <SearchButton>Buscar</SearchButton>
       </HalfSide>
       <HalfSide>
         <Image alt="hero alt" src={heroImage} />
@@ -47,8 +47,13 @@ const HalfSide = styled.section`
   padding: 0 48px 48px;
 
   &:nth-child(even) {
-    padding: 24px 12px 48px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
+`
+
+const SearchButton = styled(Button)`
+  margin-top: 36px;
 `
 
 export default HeroBlock

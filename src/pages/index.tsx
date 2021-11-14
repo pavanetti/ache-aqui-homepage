@@ -1,19 +1,14 @@
 import HeroBlock from 'components/Home/HeroBlock'
+import HowItWorksBlock from 'components/Home/HowItWorksBlock'
+import FindStablishmentsBlock from 'components/Home/FindStablishmentsBlock'
 
 const Home = () => {
   return (
     <>
       <HeroBlock />
-      <SecondBlock />
+      <HowItWorksBlock />
+      <FindStablishmentsBlock />
     </>
-  )
-}
-
-const SecondBlock = () => {
-  return (
-    <div>
-      <h1>Second Block</h1>
-    </div>
   )
 }
 

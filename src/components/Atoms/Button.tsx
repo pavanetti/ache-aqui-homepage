@@ -17,13 +17,13 @@ const Button = styled.button<ButtonProps>`
 
 function backgroundColorFrom(props) {
   if (props.primary) {
-    return props.theme.primaryColor
+    return props.theme.colors.primary
   }
   if (props.secondary) {
-    return props.theme.secondaryColor
+    return props.theme.colors.secondary
   }
 
-  return props.theme.primaryColor
+  return props.theme.colors.primary
 }
 
 export default Button

@@ -63,19 +63,19 @@ const MenuNav = styled.nav`
   height: 0;
   left: 0;
   overflow: hidden;
-  padding: 12px 0;
+  padding: 0 0 24px;
   position: absolute;
-  transition: height ease 0.6s;
+  transition: all ease 0.6s;
   width: 100vw;
 
   &.-isopen {
-    box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -1px,
-      rgb(0 0 0 / 14%) 0px 8px 8px 0px, rgb(255 255 255 / 12%) 0px 10px 10px 0px;
-    height: 290px;
+    box-shadow: ${(props) => props.theme.bottomShadow};
+    height: 295px;
   }
 
   ${mediaQuery.greaterThan('tablet')`
     &&& {
+      align-items: center;
       box-shadow: none;
       flex-direction: row;
       height: unset;
@@ -87,12 +87,12 @@ const MenuNav = styled.nav`
 `
 
 const NavButton = styled(Button)`
-  align-self: center;
-  margin: 8px 0;
-  width: 144px;
+  margin: 8px 72px;
 
   ${mediaQuery.greaterThan('tablet')`
     margin: 0 0 0 24px;
+    padding: 12px 24px;
+    min-width: unset;
   `}
 `
 
