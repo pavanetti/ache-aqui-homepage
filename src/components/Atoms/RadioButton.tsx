@@ -71,7 +71,7 @@ const Label = styled.label`
     content: '';
     display: inline-block;
     height: 20px;
-    left: calc((32px - 20px) / 2);
+    left: ${(32 - 20) / 2}px;
     position: absolute;
     width: 20px;
   }
