@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface HeaderProps {
+  gray?: boolean
+}
+
 export const Header1 = styled.h1`
   font-size: 30px;
   line-height: 40px;
@@ -11,7 +15,9 @@ export const Header1 = styled.h1`
   }
 `
 
-export const Header2 = styled.h2`
+export const Header2 = styled.h2<HeaderProps>`
+  color: ${(props) =>
+    props.gray ? props.theme.text.gray : props.theme.text.primary};
   font-size: 24px;
   line-height: 32px;
   margin: 24px 0 0;

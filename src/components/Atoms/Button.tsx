@@ -6,24 +6,16 @@ interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>`
-  background-color: ${(props) => backgroundColorFrom(props)};
+  background: ${(props) =>
+    props.secondary
+      ? props.theme.colors.secondary
+      : props.theme.colors.primary};
   border: none;
   border-radius: 4px;
   color: white;
-  font-size: 16px;
-  padding: 12px 36px;
+  font-size: 14px;
+  padding: 12px 24px;
   text-transform: uppercase;
 `
-
-function backgroundColorFrom(props) {
-  if (props.primary) {
-    return props.theme.colors.primary
-  }
-  if (props.secondary) {
-    return props.theme.colors.secondary
-  }
-
-  return props.theme.colors.primary
-}
 
 export default Button

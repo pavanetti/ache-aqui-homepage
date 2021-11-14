@@ -34,6 +34,7 @@ const HeroSection = styled.section`
   text-align: center;
 
   ${mediaQuery.greaterThan('tablet')`
+    text-align: left;
     flex-direction: row;
   `}
 `

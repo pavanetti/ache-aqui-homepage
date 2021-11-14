@@ -1,16 +1,34 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
 import styled from 'styled-components'
 
 interface RadioButtonProps {
   value: string
   name: string
+  input: string
+  onChange: (value: string) => void
 }
 
-const RadioButton: FC<RadioButtonProps> = ({ children, value, name }) => {
+const RadioButton: FC<RadioButtonProps> = ({
+  children,
+  value,
+  name,
+  input,
+  onChange,
+}) => {
   const id = `rb__${name}--${value}`
+  const handleChange = useCallback(
+    (ev) => onChange(ev.target.value),
+    [onChange]
+  )
   return (
     <Item>
-      <Input value={value} name={name} id={id} />
+      <Input
+        value={value}
+        name={name}
+        id={id}
+        checked={input === value}
+        onChange={handleChange}
+      />
       <Label htmlFor={id}>{children}</Label>
     </Item>
   )
