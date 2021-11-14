@@ -47,6 +47,10 @@ const HalfSide = styled.section`
   justify-content: center;
   padding: 0 48px 48px;
 
+  ${mediaQuery.greaterThan('tablet')`
+    padding-left: 120px;
+  `}
+
   &:nth-child(even) {
     padding-left: 12px;
     padding-right: 12px;

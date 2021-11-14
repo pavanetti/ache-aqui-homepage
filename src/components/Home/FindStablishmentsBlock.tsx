@@ -1,5 +1,6 @@
 import Button from 'components/Atoms/Button'
 import { Header2, Header3, Header5 } from 'components/Atoms/Header'
+import mediaQuery from 'mixins/mediaQuery'
 import styled from 'styled-components'
 import CitiesList from './CitiesList'
 
@@ -30,6 +31,10 @@ const BlockSection = styled.section`
   flex-direction: column;
   padding: 48px;
   text-align: center;
+
+  ${mediaQuery.greaterThan('tablet')`
+    padding: 48px 120px;
+  `}
 `
 
 const SignupButton = styled(Button)`

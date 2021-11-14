@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import signupImage from 'public/ilustracao-cadastro.png'
 import searchImage from 'public/ilustracao-busca.png'
 import Action from './HiwAction'
+import mediaQuery from 'mixins/mediaQuery'
 
 interface HiwStepsProps {
   action: Action
@@ -58,6 +59,12 @@ const StepsContainer = styled.div`
   align-items: flex-end;
   display: flex;
   flex-direction: column;
+  max-width: 320px;
+  min-width: 280px;
+
+  ${mediaQuery.greaterThan('tablet')`
+    order: 1;
+  `}
 `
 
 const StepBlock = styled.div`
@@ -91,4 +98,8 @@ const Text = styled.div`
 
 const ImageDiv = styled.div`
   margin: 48px 0;
+
+  ${mediaQuery.greaterThan('tablet')`
+    display: none;
+  `}
 `

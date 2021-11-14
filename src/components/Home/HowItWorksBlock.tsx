@@ -1,6 +1,7 @@
 import Button from 'components/Atoms/Button'
 import { Header2 } from 'components/Atoms/Header'
 import RadioButton from 'components/Atoms/RadioButton'
+import mediaQuery from 'mixins/mediaQuery'
 import { useState } from 'react'
 import styled from 'styled-components'
 import Action from './HiwAction'
@@ -11,7 +12,7 @@ const HowItWorksBlock = () => {
 
   return (
     <HiwForm>
-      <div>
+      <FormHeader>
         <Header2 gray>Como funciona</Header2>
         <RadioGroup>
           <RadioButton
@@ -37,7 +38,7 @@ const HowItWorksBlock = () => {
           sit amet nisl tempus convallis quis ac lectus. Vestibulum ac diam sit
           amet quam vehicula elementum sed sit amet dui.
         </Text>
-      </div>
+      </FormHeader>
       <HiwSteps action={action} />
       <Button>
         {action === 'buscar' ? 'Buscar estabelecimento' : 'Cadastrar'}
@@ -52,11 +53,34 @@ const HiwForm = styled.form`
   display: flex;
   flex-direction: column;
   padding: 48px;
+
+  ${mediaQuery.greaterThan('tablet')`
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 48px 120px;
+    max-height: 648px;
+  `}
+`
+
+const FormHeader = styled.div`
+  ${mediaQuery.greaterThan('tablet')`
+    display: flex;
+    flex: 1 1 40%;
+    flex-direction: column;
+    max-width: calc(100% - 280px);
+    width: 480px;
+  `}
 `
 
 const RadioGroup = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 32px 0;
+
+  ${mediaQuery.greaterThan('tablet')`
+    margin-bottom: 48px;
+    order: 1;
+  `}
 `
 
 const Text = styled.div`
@@ -66,6 +90,10 @@ const Text = styled.div`
   line-height: 24px;
   margin: 12px 0;
   text-align: center;
+
+  ${mediaQuery.greaterThan('tablet')`
+    text-align: left;
+  `}
 `
 
 export default HowItWorksBlock
