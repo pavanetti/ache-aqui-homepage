@@ -37,15 +37,17 @@ const HiwSteps: FC<HiwStepsProps> = ({ action }) => {
 
   return (
     <StepsContainer>
-      {options.steps.map((step, index) => (
-        <StepBlock key={step}>
-          <StepHeader>
-            <Number>{index + 1}</Number>
-            <Header3>Passo {index + 1}</Header3>
-          </StepHeader>
-          <Text>{step}</Text>
-        </StepBlock>
-      ))}
+      <StepsList>
+        {options.steps.map((step, index) => (
+          <StepBlock key={step}>
+            <StepHeader>
+              <Number>{index + 1}</Number>
+              <Header3>Passo {index + 1}</Header3>
+            </StepHeader>
+            <Text>{step}</Text>
+          </StepBlock>
+        ))}
+      </StepsList>
       <ImageDiv>
         <Image alt="" src={options.image} />
       </ImageDiv>
@@ -65,10 +67,32 @@ const StepsContainer = styled.div`
   ${mediaQuery.greaterThan('tablet')`
     order: 1;
   `}
+
+  ${mediaQuery.greaterThan('desktopL')`
+    max-width: 720px;
+  `}
+`
+
+const StepsList = styled.div`
+  ${mediaQuery.greaterThan('desktopL')`
+    display: flex;
+  `}
 `
 
 const StepBlock = styled.div`
   margin: 24px 0;
+
+  ${mediaQuery.greaterThan('desktopL')`
+    &:first-child {
+      margin-left: 48px;
+      margin-right: 36px;
+      margin-top: 200px;
+    }
+    &:nth-child(3) {
+      margin-left: 112px;
+      margin-top: 80px;
+    }
+  `}
 `
 
 const StepHeader = styled.div`
@@ -101,5 +125,11 @@ const ImageDiv = styled.div`
 
   ${mediaQuery.greaterThan('tablet')`
     display: none;
+  `}
+
+  ${mediaQuery.greaterThan('desktopL')`
+    display: block;
+    margin: -16px 64px 48px 0;
+    width: 416px;
   `}
 `
