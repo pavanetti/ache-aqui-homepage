@@ -7,7 +7,6 @@ import { StyledIconBase } from '@styled-icons/styled-icon'
 import { Header3 } from 'components/Atoms/Header'
 import { Facebook, Instagram, Whatsapp } from '@styled-icons/boxicons-logos'
 import { Map, TimeFive } from '@styled-icons/boxicons-regular'
-import mediaQuery from 'mixins/mediaQuery'
 
 interface StablishmentCardProps {
   stablishment: {
@@ -27,6 +26,7 @@ const StablishmentCard: FC<StablishmentCardProps> = ({ stablishment }) => {
     <CardContainer>
       <Image src={stablishment.image} alt="" width="390" height="260" />
       <CardInformations>
+        <PinIcon />
         <Header3>{stablishment.name}</Header3>
         <Description>{stablishment.description}</Description>
         <InfoColumns>
@@ -71,12 +71,26 @@ const CardContainer = styled.div`
   overflow: hidden;
 `
 
+const PinIcon = styled(Map)`
+  background: white;
+  border: 1px solid ${(props) => props.theme.colors.primary};
+  border-radius: 50%;
+  color: red;
+  height: 40px;
+  padding: 8px;
+  position: absolute;
+  right: 24px;
+  top: 0;
+  transform: translateY(-50%);
+  width: 40px;
+`
+
 const CardInformations = styled.div`
   border: 1px solid ${(props) => props.theme.colors.primary};
   border-top: none;
-  border-radius: 4px;
-  margin-top: -4px;
+  border-radius: 0 0 4px 4px;
   padding: 12px;
+  position: relative;
 `
 
 const Description = styled.span`
