@@ -67,6 +67,7 @@ const MenuNav = styled.nav`
   position: absolute;
   transition: all ease 0.6s;
   width: 100vw;
+  z-index: 1000;
 
   &.-isopen {
     box-shadow: ${(props) => props.theme.bottomShadow};
