@@ -10,13 +10,24 @@ interface CategoryCardProps {
     linkTo: string
     image: string
   }
+  isActive: boolean
+  position: number
 }
 
-const CategoryCard: FC<CategoryCardProps> = ({ category }) => {
+const CategoryCard: FC<CategoryCardProps> = ({
+  category,
+  isActive,
+  position,
+}) => {
+  const activeClass = isActive && '-active'
+  const mobileClass = position === 1 && `-showmobile`
+  const desktopClass = position <= 5 && `-showdesktop`
+  const className = [activeClass, mobileClass, desktopClass].join(' ')
+
   return (
     <Link href={category.linkTo}>
       <a>
-        <Figure key={category.name}>
+        <Figure className={className}>
           <Caption>{category.name}</Caption>
           <Image
             src={category.image}
@@ -34,15 +45,25 @@ export default CategoryCard
 
 const Figure = styled.figure`
   border-radius: 4px;
-  display: flex;
+  display: none;
   align-items: center;
   margin: 24px 0;
   max-width: 390px;
   overflow: hidden;
   position: relative;
 
+  &.-showmobile,
+  &.-active {
+    display: flex;
+  }
+
   ${mediaQuery.greaterThan('desktop')`
     margin: 24px 8px;
+
+
+    &.-showdesktop {
+      display: flex;
+    }
   `}
 `
 

@@ -1,6 +1,9 @@
+import { useCallback, useState } from 'react'
+
 import mediaQuery from 'mixins/mediaQuery'
 import styled from 'styled-components'
 import CategoryCard from './CategoryCard'
+import OpenButton from './OpenButton'
 
 const CategorySelector = () => {
   const categories = [
@@ -31,14 +34,23 @@ const CategorySelector = () => {
     },
   ]
 
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = useCallback(() => setIsOpen(!isOpen), [isOpen])
+
   return (
     <SelectorContainer>
       <SelectorHeader>Categorias</SelectorHeader>
       <CategoryList>
-        {categories.map((category) => (
-          <CategoryCard key={category.name} category={category} />
+        {categories.map((category, idx) => (
+          <CategoryCard
+            key={category.name}
+            category={category}
+            isActive={isOpen}
+            position={idx + 1}
+          />
         ))}
       </CategoryList>
+      <CategoryOpenButon isOpen={isOpen} toggleState={toggle} />
     </SelectorContainer>
   )
 }
@@ -52,6 +64,7 @@ const SelectorContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 32px 48px;
+  position: relative;
 `
 
 const SelectorHeader = styled.div`
@@ -67,4 +80,10 @@ const CategoryList = styled.div`
     display: flex;
     justify-content: space-between;
   `}
+`
+
+const CategoryOpenButon = styled(OpenButton)`
+  bottom: 0;
+  position: absolute;
+  transform: translateY(50%);
 `
