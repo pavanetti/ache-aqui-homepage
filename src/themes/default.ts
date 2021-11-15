@@ -3,9 +3,10 @@ const defaultTheme = {
     primary: '#204372',
     secondary: '#3E98C7',
     accent: '#E69422',
+    black: '#1d1d1d',
   },
   text: {
-    primary: '#000',
+    primary: '#1d1d1d',
     gray: '#656565',
   },
   bottomShadow: `rgb(0 0 0 / 20%) 0px 5px 5px -1px,
