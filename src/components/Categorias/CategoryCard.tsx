@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
+import mediaQuery from 'mixins/mediaQuery'
 
 interface CategoryCardProps {
   category: {
@@ -39,6 +40,10 @@ const Figure = styled.figure`
   max-width: 390px;
   overflow: hidden;
   position: relative;
+
+  ${mediaQuery.greaterThan('desktop')`
+    margin: 24px 8px;
+  `}
 `
 
 const Caption = styled.figcaption`
