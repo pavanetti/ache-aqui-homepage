@@ -7,6 +7,7 @@ import { StyledIconBase } from '@styled-icons/styled-icon'
 import { Header3 } from 'components/Atoms/Header'
 import { Facebook, Instagram, Whatsapp } from '@styled-icons/boxicons-logos'
 import { Map, TimeFive } from '@styled-icons/boxicons-regular'
+import mediaQuery from 'mixins/mediaQuery'
 
 interface StablishmentCardProps {
   stablishment: {
@@ -66,6 +67,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 24px 0;
+  max-width: 288px;
   overflow: hidden;
 `
 
