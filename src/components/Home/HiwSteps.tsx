@@ -114,7 +114,7 @@ const Number = styled.span`
 `
 
 const Text = styled.div`
-  color: #656565;
+  color: ${(props) => props.theme.text.gray};
   font-size: 14px;
   margin-left: 52px;
   max-width: 168px;

@@ -78,7 +78,7 @@ const CardInformations = styled.div`
 `
 
 const Description = styled.span`
-  color: #656565;
+  color: ${(props) => props.theme.text.gray};
   font-size: 12px;
 `
 
@@ -103,7 +103,7 @@ const HalfColumn = styled.div`
 
 const Item = styled.span`
   align-items: center;
-  color: #656565;
+  color: ${(props) => props.theme.text.gray};
   display: flex;
   font-size: 12px;
   margin: 8px 16px 0 0;

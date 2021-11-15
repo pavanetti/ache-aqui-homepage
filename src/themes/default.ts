@@ -2,6 +2,7 @@ const defaultTheme = {
   colors: {
     primary: '#204372',
     secondary: '#3E98C7',
+    accent: '#E69422',
   },
   text: {
     primary: '#000',

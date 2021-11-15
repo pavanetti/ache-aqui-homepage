@@ -37,7 +37,7 @@ export const Header4 = styled.h4`
 `
 
 export const Header5 = styled.h5`
-  color: #656565;
+  color: ${(props) => props.theme.text.gray};
   font-size: 18px;
   font-weight: normal;
   line-height: 24px;

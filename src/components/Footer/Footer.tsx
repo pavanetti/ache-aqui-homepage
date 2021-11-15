@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import mediaQuery from 'mixins/mediaQuery'
 
 const FooterContainer = styled.div`
-  background: #204372;
+  background: ${(props) => props.theme.colors.primary};
   color: white;
   padding: 24px 0;
 

@@ -9,7 +9,7 @@ const CopyrightContainer = styled.div`
   text-align: center;
 
   ${mediaQuery.greaterThan('tablet')`
-    border-top: 1px solid #e69422;
+    border-top: 1px solid ${(props) => props.theme.colors.accent};
     display: flex;
     justify-content: space-between;
     padding: 8px 120px;

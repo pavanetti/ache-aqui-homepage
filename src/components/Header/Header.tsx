@@ -1,14 +1,17 @@
-import styled from 'styled-components'
+import { useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
 import mediaQuery from 'mixins/mediaQuery'
 
 import Logo from 'public/logo.svg'
 import Menu from './Menu'
 
 const Header = () => {
+  const themeContext = useContext(ThemeContext)
+
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <Logo width={86} height={44} fill="#204372" />
+        <Logo width={86} height={44} fill={themeContext.colors.primary} />
         <Menu />
       </HeaderContainer>
     </HeaderWrapper>

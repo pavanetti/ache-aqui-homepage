@@ -111,7 +111,7 @@ const NavigationList = styled.ul`
 `
 
 const NavigationItem = styled.li`
-  border-bottom: 1px solid #e69422;
+  border-bottom: 1px solid ${(props) => props.theme.colors.accent};
   font-size: 16px;
   line-height: 24px;
   list-style: none;

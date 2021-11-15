@@ -55,7 +55,7 @@ const CoreContainer = styled.div`
 
 const NavigationContainer = styled.nav`
   ${mediaQuery.greaterThan('tablet')`
-    border-right: 1px solid #e69422;
+    border-right: 1px solid ${(props) => props.theme.colors.accent};
     padding: 0 24px;
   `}
 `
@@ -78,14 +78,14 @@ const NavigationList = styled.ul`
 `
 
 const NavigationItem = styled.li`
-  border-top: 1px solid #e69422;
+  border-top: 1px solid ${(props) => props.theme.colors.accent};
   font-size: 16px;
   list-style: none;
   padding: 8px;
   text-transform: uppercase;
 
   :last-of-type {
-    border-bottom: 1px solid #e69422;
+    border-bottom: 1px solid ${(props) => props.theme.colors.accent};
   }
 
   ${mediaQuery.greaterThan('tablet')`
@@ -109,7 +109,7 @@ const ContactContainer = styled.div`
 `
 
 const ContactItem = styled.div`
-  border-top: 1px solid #e69422;
+  border-top: 1px solid ${(props) => props.theme.colors.accent};
   font-size: 16px;
   list-style: none;
   padding: 8px;
@@ -117,7 +117,7 @@ const ContactItem = styled.div`
   text-transform: uppercase;
 
   :last-of-type {
-    border-bottom: 1px solid #e69422;
+    border-bottom: 1px solid ${(props) => props.theme.colors.accent};
   }
 
   ${mediaQuery.greaterThan('tablet')`

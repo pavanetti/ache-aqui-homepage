@@ -36,7 +36,7 @@ const AnimatedButton = styled.div`
   &,
   &::before,
   &::after {
-    background: #204372;
+    background: ${(props) => props.theme.colors.primary};
     content: '';
     height: 2px;
     position: absolute;
