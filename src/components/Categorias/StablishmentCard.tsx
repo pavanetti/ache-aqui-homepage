@@ -24,7 +24,7 @@ interface StablishmentCardProps {
 const StablishmentCard: FC<StablishmentCardProps> = ({ stablishment }) => {
   return (
     <CardContainer>
-      <Image src={stablishment.image} alt="" width="390" height="260" />
+      <Image src={stablishment.image} alt="" width="600" height="400" />
       <CardInformations>
         <PinIcon />
         <Header3>{stablishment.name}</Header3>

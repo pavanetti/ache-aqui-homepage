@@ -17,7 +17,7 @@ const RegisterStablishment = () => {
 export default RegisterStablishment
 
 const Wrapper = styled.div`
-  ${mediaQuery.greaterThan('tablet')`
+  ${mediaQuery.greaterThan('desktop')`
     align-self: flex-start;
     text-align: left;
   `}

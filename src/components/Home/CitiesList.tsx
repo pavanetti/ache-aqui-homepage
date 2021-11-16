@@ -26,9 +26,21 @@ const CitiesListContainer = styled.div`
   margin: 24px 0;
 
   ${mediaQuery.greaterThan('tablet')`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1270px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+  `}
+
+  ${mediaQuery.greaterThan('desktop')`
+    grid-template-columns: repeat(3, 1fr);
+  `}
+
+  ${mediaQuery.greaterThan('desktopL')`
+    grid-template-columns: repeat(4, 1fr);
+  `}
+
+  ${mediaQuery.greaterThan('desktopXL')`
+    grid-template-columns: repeat(5, 1fr);
   `}
 `

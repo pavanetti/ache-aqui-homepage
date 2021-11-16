@@ -32,8 +32,8 @@ const CategoryCard: FC<CategoryCardProps> = ({
           <Image
             src={category.image}
             alt={category.name}
-            width="390"
-            height="260"
+            width="600"
+            height="400"
           />
         </Figure>
       </a>

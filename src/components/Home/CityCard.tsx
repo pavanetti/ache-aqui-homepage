@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
-import mediaQuery from 'mixins/mediaQuery'
 
 interface CityCardProps {
   city: {
@@ -14,7 +13,7 @@ const CityCard: FC<CityCardProps> = ({ city }) => {
   return (
     <Figure>
       <FigCaption>{city.name}</FigCaption>
-      <Image src={city.image} alt={city.name} width="390" height="260" />
+      <Image src={city.image} alt={city.name} width="600" height="400" />
     </Figure>
   )
 }
@@ -27,11 +26,6 @@ const Figure = styled.figure`
   margin: 24px 0 0;
   overflow: hidden;
   position: relative;
-
-  ${mediaQuery.greaterThan('tablet')`
-    flex: 1 1 calc(100% / 3 - 32px);
-    margin: 16px;
-  `}
 `
 
 const FigCaption = styled.figcaption`

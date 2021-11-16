@@ -48,6 +48,7 @@ const HalfSide = styled.section`
   padding: 0 48px 48px;
 
   ${mediaQuery.greaterThan('tablet')`
+    align-items: flex-start;
     padding-left: 120px;
   `}
 
