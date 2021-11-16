@@ -65,6 +65,7 @@ const SelectorContainer = styled.div`
   flex-direction: column;
   padding: 32px 48px;
   position: relative;
+  width: 100%;
 `
 
 const SelectorHeader = styled.div`

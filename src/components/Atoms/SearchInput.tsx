@@ -2,7 +2,7 @@ import { Search } from '@styled-icons/boxicons-regular'
 import styled from 'styled-components'
 import TextInput from './TextInput'
 
-const SearchInput = ({ className }) => {
+const SearchInput = ({ className }: { className?: string }) => {
   return (
     <Wrapper className={className}>
       <TextInput placeholder="Buscar" />

@@ -77,13 +77,22 @@ const StablishmentList = () => {
 export default StablishmentList
 
 const ListContainer = styled.div`
+  align-center;
   display: flex;
   flex-direction: column;
 
   ${mediaQuery.greaterThan('tablet')`
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1270px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+  `}
+
+  ${mediaQuery.greaterThan('desktopL')`
+    grid-template-columns: repeat(4, 1fr);
+  `}
+
+  ${mediaQuery.greaterThan('desktopXL')`
+    grid-template-columns: repeat(6, 1fr);
   `}
 `

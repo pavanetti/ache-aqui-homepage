@@ -67,7 +67,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 24px 0;
-  max-width: 288px;
+  min-width: 288px;
   overflow: hidden;
 `
 
