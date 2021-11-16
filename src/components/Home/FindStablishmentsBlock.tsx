@@ -1,5 +1,5 @@
-import Button from 'components/Atoms/Button'
 import { Header2, Header3, Header5 } from 'components/Atoms/Header'
+import RegisterStablishment from 'components/Categorias/RegisterStablishment'
 import mediaQuery from 'mixins/mediaQuery'
 import styled from 'styled-components'
 import CitiesList from './CitiesList'
@@ -14,11 +14,7 @@ const FindStablishmentsBlock = () => {
         dictum por
       </Header5>
       <CitiesList />
-      <Header3>
-        Gostaria de cadastrar seu estabelecimento em nosso site? Não perca
-        tempo, cadastre&#8209;se já!
-      </Header3>
-      <SignupButton>Cadastrar</SignupButton>
+      <RegisterStablishment />
     </BlockSection>
   )
 }
@@ -35,8 +31,4 @@ const BlockSection = styled.section`
   ${mediaQuery.greaterThan('tablet')`
     padding: 48px 120px;
   `}
-`
-
-const SignupButton = styled(Button)`
-  margin-top: 36px;
 `
