@@ -22,5 +22,12 @@ const GlobalContainer = styled.div`
 `
 
 const ContentContainer = styled.div`
+  align-items: center;
+  display: flex;
   flex: 1;
+  flex-direction: column;
+
+  > * {
+    width: 100%;
+  }
 `

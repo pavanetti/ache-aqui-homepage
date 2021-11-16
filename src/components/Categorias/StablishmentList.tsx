@@ -88,6 +88,10 @@ const ListContainer = styled.div`
     grid-row-gap: 32px;
   `}
 
+  ${mediaQuery.greaterThan('desktop')`
+    grid-template-columns: repeat(3, 1fr);
+  `}
+
   ${mediaQuery.greaterThan('desktopL')`
     grid-template-columns: repeat(4, 1fr);
   `}
