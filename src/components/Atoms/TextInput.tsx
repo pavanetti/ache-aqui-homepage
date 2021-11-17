@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const TextInput = styled.input.attrs({ type: 'text' })`
+const TextInput = styled.input`
   background: white;
   border: 1px solid ${(props) => props.theme.colors.black};
   border-radius: 4px;
@@ -8,5 +8,7 @@ const TextInput = styled.input.attrs({ type: 'text' })`
   font-size: 16px;
   padding: 12px 8px;
 `
+
+TextInput.defaultProps = { type: 'text' }
 
 export default TextInput
