@@ -2,6 +2,8 @@ import { Header3 } from 'components/Atoms/Header'
 import TextInput from 'components/Atoms/TextInput'
 import { Label } from 'components/Atoms/Label'
 import styled from 'styled-components'
+import { Col, Row } from 'components/Atoms/Layout'
+import { FileUploader } from 'components/Atoms/FileUploader'
 
 export function AccessForm() {
   return (
@@ -26,6 +28,16 @@ export function AccessForm() {
 
         <Label>Whatsapp:</Label>
         <TextInput placeholder="Whatsapp" type="tel" />
+        <Row tablet={2} rowGap={0}>
+          <Col>
+            <Label>Foto de Capa:</Label>
+            <FileUploader />
+          </Col>
+          <Col>
+            <Label>Fotos:</Label>
+            <FileUploader limit={5} />
+          </Col>
+        </Row>
       </SocialNetworks>
     </Wrapper>
   )
