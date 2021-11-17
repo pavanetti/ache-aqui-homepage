@@ -20,17 +20,16 @@ const Categorias = () => {
 export default Categorias
 
 const PageContainer = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   padding: 48px;
 
   ${mediaQuery.greaterThan('tablet')`
-    padding: 80px;
+    padding: 48px 80px 80px;
   `}
 
-
   ${mediaQuery.greaterThan('desktop')`
-    padding: 120px;
+    padding: 48px 120px 120px;
   `}
 `
 

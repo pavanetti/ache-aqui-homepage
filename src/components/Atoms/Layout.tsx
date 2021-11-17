@@ -55,4 +55,20 @@ function colsFor(size: string, props: RowProps) {
   }
 }
 
-export const Col = styled.div``
+type Position = 'flex-start' | 'center' | 'flex-end'
+interface ColProps {
+  align?: Position
+  justify?: Position
+}
+
+export const Col = styled.div<ColProps>`
+  align-items: ${(props) => props.align};
+  display: flex;
+  flex-direction: column;
+  justify-content: ${(props) => props.justify};
+`
+
+Col.defaultProps = {
+  align: 'flex-start',
+  justify: 'flex-start',
+}
