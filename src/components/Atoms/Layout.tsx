@@ -18,6 +18,7 @@ export const Row = styled.div<RowProps>`
   grid-row-gap: ${(props) =>
     props.rowGap !== undefined ? props.rowGap : 32}px;
   grid-template-columns: repeat(${(props) => colsFor('phone', props)}, 1fr);
+  width: 100%;
 
   ${mediaQuery.greaterThan('tablet')`
     grid-template-columns: repeat(${(props) => colsFor('tablet', props)}, 1fr);
