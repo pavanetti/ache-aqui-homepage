@@ -1,3 +1,4 @@
+import Button from 'components/Atoms/Button'
 import { Header2, Header5 } from 'components/Atoms/Header'
 import { Col, Row } from 'components/Atoms/Layout'
 import { AccessForm } from 'components/Forms/AccessForm'
@@ -25,6 +26,7 @@ const EditionPage = () => {
           <StablishmentForm />
         </Col>
       </Row>
+      <Button>Alterar</Button>
     </Wrapper>
   )
 }
@@ -44,6 +46,11 @@ const Wrapper = styled.div`
   ${mediaQuery.greaterThan('desktop')`
     padding: 48px 120px 120px;
   `}
+
+  ${Button} {
+    align-self: flex-end;
+    margin-top: 48px;
+  }
 `
 
 const HeaderSection = styled(Row)`
