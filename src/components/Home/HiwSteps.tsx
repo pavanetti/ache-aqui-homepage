@@ -42,7 +42,7 @@ const HiwSteps: FC<HiwStepsProps> = ({ action }) => {
           <StepBlock key={step}>
             <StepHeader>
               <Number>{index + 1}</Number>
-              <Header3>Passo {index + 1}</Header3>
+              <HeaderText>Passo {index + 1}</HeaderText>
             </StepHeader>
             <Text>{step}</Text>
           </StepBlock>
@@ -111,6 +111,10 @@ const Number = styled.span`
   justify-content: center;
   margin-right: 16px;
   width: 36px;
+`
+
+const HeaderText = styled(Header3)`
+  margin: 12px 0;
 `
 
 const Text = styled.div`

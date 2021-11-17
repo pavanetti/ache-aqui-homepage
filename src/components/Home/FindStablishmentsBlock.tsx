@@ -1,4 +1,4 @@
-import { Header2, Header3, Header5 } from 'components/Atoms/Header'
+import { Header2, Header5 } from 'components/Atoms/Header'
 import RegisterStablishment from 'components/Categorias/RegisterStablishment'
 import mediaQuery from 'mixins/mediaQuery'
 import styled from 'styled-components'
@@ -7,7 +7,7 @@ import CitiesList from './CitiesList'
 const FindStablishmentsBlock = () => {
   return (
     <BlockSection>
-      <Header2>Encontre estabelecimentos associados</Header2>
+      <SectionHeader>Encontre estabelecimentos associados</SectionHeader>
       <Header5>
         Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet
         nisl tempus convallis quis ac lectus. Cras ultricies ligula sed magna
@@ -31,4 +31,8 @@ const BlockSection = styled.section`
   ${mediaQuery.greaterThan('tablet')`
     padding: 48px 120px;
   `}
+`
+
+const SectionHeader = styled(Header2)`
+  margin: 24px 0;
 `

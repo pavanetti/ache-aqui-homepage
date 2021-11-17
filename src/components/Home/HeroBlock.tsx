@@ -5,25 +5,28 @@ import { Header1, Header4 } from 'components/Atoms/Header'
 
 import heroImage from 'public/hero-image.png'
 import mediaQuery from 'mixins/mediaQuery'
+import { Col, Row } from 'components/Atoms/Layout'
 
 const HeroBlock = () => {
   return (
     <HeroSection>
-      <HalfSide>
-        <Header1>
-          Mauris blandit aliquet elit, eget tincidunt nibh <em>pulvinar</em> a.
-          Donec rutrum congue leo eget <em>malesuada</em>.
-        </Header1>
-        <Header4>
-          Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet
-          et, porttitor at sem. Sed porttitor lectus nibh. Nulla porttitor
-          accumsan tincidunt.
-        </Header4>
-        <SearchButton>Buscar</SearchButton>
-      </HalfSide>
-      <HalfSide>
-        <Image alt="hero alt" src={heroImage} />
-      </HalfSide>
+      <Row tablet={2}>
+        <LeftCol>
+          <Header1>
+            Mauris blandit aliquet elit, eget tincidunt nibh <em>pulvinar</em>{' '}
+            a. Donec rutrum congue leo eget <em>malesuada</em>.
+          </Header1>
+          <Tagline>
+            Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet
+            et, porttitor at sem. Sed porttitor lectus nibh. Nulla porttitor
+            accumsan tincidunt.
+          </Tagline>
+          <CtaButton>Buscar</CtaButton>
+        </LeftCol>
+        <RightCol>
+          <Image alt="hero alt" src={heroImage} />
+        </RightCol>
+      </Row>
     </HeroSection>
   )
 }
@@ -39,26 +42,27 @@ const HeroSection = styled.section`
   `}
 `
 
-const HalfSide = styled.section`
-  align-items: center;
+const LeftCol = styled(Col)`
+  align-items: flex-start;
   display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 0 48px 48px;
+  padding: 0 0 48px 48px;
 
   ${mediaQuery.greaterThan('tablet')`
-    align-items: flex-start;
     padding-left: 120px;
   `}
-
-  &:nth-child(even) {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
 `
 
-const SearchButton = styled(Button)`
+const RightCol = styled(Col)`
+  margin-bottom: 48px;
+`
+
+const Tagline = styled(Header4)`
+  margin-top: 24px;
+`
+
+const CtaButton = styled(Button)`
   margin-top: 36px;
 `
 

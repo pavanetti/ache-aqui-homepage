@@ -7,6 +7,7 @@ import { StyledIconBase } from '@styled-icons/styled-icon'
 import { Header3 } from 'components/Atoms/Header'
 import { Facebook, Instagram, Whatsapp } from '@styled-icons/boxicons-logos'
 import { Map, TimeFive } from '@styled-icons/boxicons-regular'
+import { Col, Row } from 'components/Atoms/Layout'
 
 interface StablishmentCardProps {
   stablishment: {
@@ -27,10 +28,10 @@ const StablishmentCard: FC<StablishmentCardProps> = ({ stablishment }) => {
       <Image src={stablishment.image} alt="" width="600" height="400" />
       <CardInformations>
         <PinIcon />
-        <Header3>{stablishment.name}</Header3>
+        <StablishmentName>{stablishment.name}</StablishmentName>
         <Description>{stablishment.description}</Description>
-        <InfoColumns>
-          <HalfColumn>
+        <Row phone={2} colGap={8}>
+          <Col>
             <Item>
               <Whatsapp size={24} />
               {he.decode(stablishment.phone)}
@@ -43,8 +44,8 @@ const StablishmentCard: FC<StablishmentCardProps> = ({ stablishment }) => {
               <Facebook size={24} />
               {stablishment.facebook}
             </Item>
-          </HalfColumn>
-          <HalfColumn>
+          </Col>
+          <Col>
             <Item>
               <TimeFive size={24} />
               {stablishment.openingHours}
@@ -53,8 +54,8 @@ const StablishmentCard: FC<StablishmentCardProps> = ({ stablishment }) => {
               <Map size={24} />
               {stablishment.address}
             </Item>
-          </HalfColumn>
-        </InfoColumns>
+          </Col>
+        </Row>
       </CardInformations>
     </CardContainer>
   )
@@ -67,7 +68,6 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 24px 0;
-  min-width: 288px;
   overflow: hidden;
 `
 
@@ -93,28 +93,13 @@ const CardInformations = styled.div`
   position: relative;
 `
 
+const StablishmentName = styled(Header3)`
+  margin: 12px 0;
+`
+
 const Description = styled.span`
   color: ${(props) => props.theme.text.gray};
   font-size: 12px;
-`
-
-const InfoColumns = styled.div`
-  display: flex;
-
-  ${StyledIconBase} {
-    color: ${(props) => props.theme.colors.primary};
-    margin-right: 4px;
-  }
-`
-
-const HalfColumn = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-
-  &:first-child {
-    white-space: nowrap;
-  }
 `
 
 const Item = styled.span`
@@ -122,5 +107,11 @@ const Item = styled.span`
   color: ${(props) => props.theme.text.gray};
   display: flex;
   font-size: 12px;
-  margin: 8px 16px 0 0;
+  margin: 8px 0;
+
+  ${StyledIconBase} {
+    color: ${(props) => props.theme.colors.primary};
+    margin-right: 4px;
+    min-width: 24px;
+  }
 `

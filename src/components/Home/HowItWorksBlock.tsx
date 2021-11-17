@@ -13,7 +13,7 @@ const HowItWorksBlock = () => {
   return (
     <HiwForm>
       <FormHeader>
-        <Header2 gray>Como funciona</Header2>
+        <HeaderText gray>Como funciona</HeaderText>
         <RadioGroup>
           <RadioButton
             value="buscar"
@@ -72,6 +72,10 @@ const FormHeader = styled.div`
   `}
 `
 
+const HeaderText = styled(Header2)`
+  margin: 24px 0;
+`
+
 const RadioGroup = styled.div`
   display: flex;
   justify-content: space-between;
@@ -88,7 +92,6 @@ const Text = styled.div`
   font-size: 18px;
   font-weight: normal;
   line-height: 24px;
-  margin: 12px 0;
   text-align: center;
 
   ${mediaQuery.greaterThan('tablet')`

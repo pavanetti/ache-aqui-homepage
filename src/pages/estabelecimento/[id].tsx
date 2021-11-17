@@ -19,7 +19,7 @@ const StablishmentPage: NextPage<StablishmentPageProps> = ({
 }) => {
   return (
     <Wrapper>
-      <Row>
+      <Row tablet={2}>
         <Col>
           <Header2>{stablishment.name}</Header2>
           <Description>{stablishment.description}</Description>
@@ -56,7 +56,7 @@ export default StablishmentPage
 
 const Wrapper = styled.div`
   max-width: 968px;
-  padding: 48px;
+  padding: 80px;
 `
 
 const Description = styled.div`
@@ -64,5 +64,5 @@ const Description = styled.div`
   font-size: 18px;
   font-weight: normal;
   line-height: 24px;
-  margin: 12px 24px 12px 0;
+  margin: 24px 0;
 `

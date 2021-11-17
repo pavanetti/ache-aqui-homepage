@@ -83,9 +83,9 @@ const ListContainer = styled.div`
 
   ${mediaQuery.greaterThan('tablet')`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 32px;
     grid-row-gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
   `}
 
   ${mediaQuery.greaterThan('desktop')`
