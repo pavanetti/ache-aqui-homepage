@@ -6,7 +6,8 @@ import { Col, Row } from 'components/Atoms/Layout'
 import { FieldSet } from 'components/Atoms/FieldSet'
 import TextInput from 'components/Atoms/TextInput'
 import Button from 'components/Atoms/Button'
-import { Label } from '../components/Atoms/Label'
+import { Label } from 'components/Atoms/Label'
+import { SelectInput } from 'components/Atoms/SelectInput'
 
 const SignupPage = () => {
   return (
@@ -27,6 +28,30 @@ const SignupPage = () => {
 
             <Label>CNPJ/CPF do Estabelecimento/Proprietário:</Label>
             <TextInput placeholder="CPF ou CNPJ" />
+
+            <Label>Qual categoria de segmento que atua:</Label>
+            <SelectInput>
+              <option disabled selected>
+                Selecionar
+              </option>
+              <option>Saúde</option>
+              <option>Supermercado</option>
+              <option>Restaurante</option>
+              <option>Varejão</option>
+              <option>Oficina</option>
+            </SelectInput>
+
+            <Label>Tipo de estabelecimento:</Label>
+            <SelectInput>
+              <option disabled selected>
+                Tipo
+              </option>
+              <option>Saúde</option>
+              <option>Supermercado</option>
+              <option>Restaurante</option>
+              <option>Varejão</option>
+              <option>Oficina</option>
+            </SelectInput>
 
             <Label>Telefone:</Label>
             <TextInput placeholder="Número de Telefone" />
@@ -102,13 +127,17 @@ const Wrapper = styled.div`
     width: 100%;
   }
 
-  ${TextInput} {
+  ${TextInput}, ${SelectInput} {
     width: 100%;
   }
 
   ${Button} {
     align-self: flex-end;
   }
+`
+
+const FormSelectInput = styled(SelectInput)`
+  width: 100%;
 `
 
 const Description = styled(Header5)`
