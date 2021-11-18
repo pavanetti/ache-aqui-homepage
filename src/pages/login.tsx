@@ -36,11 +36,15 @@ const LoginPage = () => {
 export default LoginPage
 
 const Wrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex: 1;
   margin: 120px 240px;
   max-width: 368px;
 
   ${FieldSet} {
     align-items: center;
+    flex: 1;
   }
 
   ${TextInput} {
