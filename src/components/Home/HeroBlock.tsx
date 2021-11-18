@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Button from 'components/Atoms/Button'
 import { Header1, Header4 } from 'components/Atoms/Header'
 
-import heroImage from 'public/hero-image.png'
+import HeroImage from 'public/hero.svg'
 import mediaQuery from 'mixins/mediaQuery'
 import { Col, Row } from 'components/Atoms/Layout'
 
@@ -24,7 +24,7 @@ const HeroBlock = () => {
           <CtaButton>Buscar</CtaButton>
         </LeftCol>
         <RightCol>
-          <Image alt="hero alt" src={heroImage} />
+          <HeroImage />
         </RightCol>
       </Row>
     </HeroSection>
@@ -43,14 +43,16 @@ const HeroSection = styled.section`
 `
 
 const LeftCol = styled(Col)`
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0 48px 48px;
+  padding: 0 48px 48px;
 
   ${mediaQuery.greaterThan('tablet')`
+  align-items: flex-start;
     padding-left: 120px;
+    padding-right: 0;
   `}
 `
 

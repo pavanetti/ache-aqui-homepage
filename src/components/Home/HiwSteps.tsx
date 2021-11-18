@@ -1,10 +1,9 @@
 import { FC } from 'react'
-import Image from 'next/image'
 import { Header3 } from 'components/Atoms/Header'
 import styled from 'styled-components'
 
-import signupImage from 'public/ilustracao-cadastro.png'
-import searchImage from 'public/ilustracao-busca.png'
+import SignupImage from 'public/Como_Funciona_Cadastro.svg'
+import SearchImage from 'public/Como_Funciona_Busca.svg'
 import Action from './HiwAction'
 import mediaQuery from 'mixins/mediaQuery'
 
@@ -27,11 +26,11 @@ const HiwSteps: FC<HiwStepsProps> = ({ action }) => {
   const options = {
     buscar: {
       steps: searchSteps,
-      image: searchImage,
+      Image: SearchImage,
     },
     cadastrar: {
       steps: signupSteps,
-      image: signupImage,
+      Image: SignupImage,
     },
   }[action]
 
@@ -49,7 +48,7 @@ const HiwSteps: FC<HiwStepsProps> = ({ action }) => {
         ))}
       </StepsList>
       <ImageDiv>
-        <Image alt="" src={options.image} />
+        <options.Image />
       </ImageDiv>
     </StepsContainer>
   )
@@ -126,6 +125,7 @@ const Text = styled.div`
 
 const ImageDiv = styled.div`
   margin: 48px 0;
+  width: 100%;
 
   ${mediaQuery.greaterThan('tablet')`
     display: none;
